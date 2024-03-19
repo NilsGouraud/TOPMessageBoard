@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+
+  <body>
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+    <p>
+      <% messages.map(function(m){ %>
+        <div class="message">
+      <div class="headerMessage">
+        <%=m.user%> on <%=m.added.toLocaleDateString("fr-FR")%> at
+        <%=m.added.getHours() %>:<%=m.added.getMinutes() %>
+      </div>
+      <div class="textMessage"><%=m.text%></div>
+    </div>
+      <% }); %>
+    </p>
+    <div>
+      <a href="/new">go to the message form</a>
+    </div>
+  </body>
+</html>
